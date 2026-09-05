@@ -4,6 +4,8 @@
 
 The Quantum Operations Agent is the central coordinator that orchestrates communication between three specialized quantum computing agents. It acts as the main entry point for users, intelligently routing requests to the appropriate specialized agent and combining their capabilities to provide comprehensive quantum computing solutions.
 
+The orchestrator uses Granite 4 Small H locally through Ollama (`ollama:granite4:small-h`).
+
 ## 🏗️ Architecture Overview
 
 ```
@@ -247,7 +249,7 @@ server = "quantum_operations_agent:run_server"
 
 [tool.agentstack]
 agent_port = 8000
-model = "mistralai/mistral-small"
+model = "ollama:granite4:small-h"
 ```
 
 ### Specialized Agent URLs

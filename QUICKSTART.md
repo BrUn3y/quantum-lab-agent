@@ -27,7 +27,8 @@ Before starting, ensure you have:
    curl -LsSf https://astral.sh/uv/install.sh | sh
    ```
 
-3. **IBM Watsonx API Key** (for LLM)
+3. **Ollama with Granite 4 Small H** (default local LLM)
+   - Run `ollama pull granite4:small-h`
    - Get it from: https://cloud.ibm.com/
 
 4. **IBM Quantum Token** (optional, for quantum operations)
