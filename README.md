@@ -6,7 +6,16 @@ The Quantum Operations Agent is the central coordinator that orchestrates commun
 
 The orchestrator uses Granite 4 Small H locally through Ollama (`ollama:granite4:small-h`).
 
+> [!IMPORTANT]
+> The Quantum Lab Agent requires all three specialized agents to be running for full functionality:
+>
+> - **Quantum Developer Agent**: Code generation specialist
+> - **Quantum Status Agent**: Status monitoring specialist
+> - **Quantum Computing Agent**: Execution specialist
+
 ## 🏗️ Architecture Overview
+
+![Quantum Lab Agent architecture diagram](docs/images/architecture.png)
 
 ```
 ┌─────────────────────────────────────────────────────────────┐
