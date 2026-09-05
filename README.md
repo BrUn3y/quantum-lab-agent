@@ -4,6 +4,8 @@
 
 The Quantum Operations Agent is the central coordinator that orchestrates communication between three specialized quantum computing agents. It acts as the main entry point for users, intelligently routing requests to the appropriate specialized agent and combining their capabilities to provide comprehensive quantum computing solutions.
 
+The orchestrator uses Granite 4 Small H locally through Ollama (`ollama:granite4:small-h`).
+
 ## 🏗️ Architecture Overview
 
 ```
@@ -247,7 +249,7 @@ server = "quantum_operations_agent:run_server"
 
 [tool.agentstack]
 agent_port = 8000
-model = "mistralai/mistral-small"
+model = "ollama:granite4:small-h"
 ```
 
 ### Specialized Agent URLs
@@ -475,10 +477,10 @@ curl -X POST http://127.0.0.1:8000/chat \
 
 This agent is part of the Quantum Computing Multi-Agent System. Here are the related repositories:
 
-- **[Quantum Computing Agent](https://github.ibm.com/Edgar-Castaneda/quantum-computing-agent)** - Circuit execution specialist
-- **[Quantum Status Agent](https://github.ibm.com/Edgar-Castaneda/quantum-status-agent)** - Status monitoring and job tracking
-- **[Quantum Developer Agent](https://github.ibm.com/Edgar-Castaneda/quantum-developer-agent)** - Code generation and algorithm implementation
-- **[Quantum Operations Agent](https://github.ibm.com/Edgar-Castaneda/quantum-lab-agent)** - Main orchestrator coordinating all agents (this repository)
+- **[Quantum Computing Agent](https://github.com/BrUn3y/quantum-computing-agent)** - Circuit execution specialist
+- **[Quantum Status Agent](https://github.com/BrUn3y/quantum-status-agent)** - Status monitoring and job tracking
+- **[Quantum Developer Agent](https://github.com/BrUn3y/quantum-developer-agent)** - Code generation and algorithm implementation
+- **[Quantum Operations Agent](https://github.com/BrUn3y/quantum-lab-agent)** - Main orchestrator coordinating all agents (this repository)
 
 ## 📚 Related Agents
 
