@@ -22,7 +22,7 @@ job monitoring, and circuit execution on simulators or real IBM Quantum hardware
 
 The Quantum Lab Agent is the system's single entry point. It listens on port `8000`, determines which capability a request needs, coordinates the appropriate specialized agents through A2A, and returns one combined response.
 
-The default local language model is **IBM Granite 4 Small H**, served by Ollama as `ollama:granite4:small-h`.
+The default local language model is **IBM Granite 4.2 8B**, served by Ollama as `ollama:granite4.2:8b`.
 
 > [!IMPORTANT]
 > Full functionality requires all three specialized agents to be running alongside the Lab Agent.
@@ -55,7 +55,7 @@ The agents communicate using the Agent-to-Agent protocol. The Computing and Stat
 | ⚡ **Circuit execution** | Submits circuits to simulators or real IBM Quantum hardware |
 | 📊 **Status monitoring** | Retrieves backend availability, job state, and measurement results |
 | 🔄 **Multi-agent workflows** | Chains dependent tasks such as generate → execute → inspect results |
-| 🧠 **Local inference** | Uses Granite 4 Small H through Ollama by default |
+| 🧠 **Local inference** | Uses Granite 4.2 8B through Ollama by default |
 
 ## 🚀 Quick start
 
@@ -63,14 +63,14 @@ The agents communicate using the Agent-to-Agent protocol. The Computing and Stat
 
 - Python `3.11+`
 - [uv](https://github.com/astral-sh/uv)
-- [Ollama](https://ollama.com/) with Granite 4 Small H
+- [Ollama](https://ollama.com/) with Granite 4.2 8B
 - IBM Quantum credentials in the specialized agents that access hardware
 - All four repositories cloned as sibling directories
 
 ### 1. Install the local model
 
 ```bash
-ollama pull granite4:small-h
+ollama pull granite4.2:8b
 ```
 
 ### 2. Clone and configure the Lab Agent
@@ -86,7 +86,7 @@ Default configuration:
 
 ```dotenv
 OLLAMA_API_BASE=http://127.0.0.1:11434
-LAB_MODEL=ollama:granite4:small-h
+LAB_MODEL=ollama:granite4.2:8b
 OPERATIONS_HOST=127.0.0.1
 OPERATIONS_PORT=8000
 
@@ -162,7 +162,7 @@ The workflow is handled automatically:
 | Variable | Default | Purpose |
 |---|---|---|
 | `OLLAMA_API_BASE` | `http://127.0.0.1:11434` | Ollama API endpoint |
-| `LAB_MODEL` | `ollama:granite4:small-h` | Orchestrator model |
+| `LAB_MODEL` | `ollama:granite4.2:8b` | Orchestrator model |
 | `OPERATIONS_HOST` | `127.0.0.1` | Lab Agent host |
 | `OPERATIONS_PORT` | `8000` | Lab Agent port |
 | `DEVELOPER_HOST` / `DEVELOPER_PORT` | `127.0.0.1` / `8001` | Developer Agent endpoint |
@@ -197,7 +197,7 @@ The three specialized agents must still be reachable using the host and port val
 | Problem | Check |
 |---|---|
 | A specialized agent cannot be reached | Confirm ports `8001–8003` and the corresponding host variables |
-| Ollama connection fails | Run `ollama list` and confirm `granite4:small-h` is installed |
+| Ollama connection fails | Run `ollama list` and confirm `granite4.2:8b` is installed |
 | IBM Quantum authentication fails | Verify the IBM Quantum token in the Computing and Status agents |
 | A port is already occupied | Run `lsof -nP -iTCP:<port> -sTCP:LISTEN` |
 | The server starts but a workflow is incomplete | Confirm all four agent cards respond before sending the request |
