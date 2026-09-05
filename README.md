@@ -8,6 +8,8 @@ The orchestrator uses Granite 4 Small H locally through Ollama (`ollama:granite4
 
 ## 🏗️ Architecture Overview
 
+![Quantum Lab Agent architecture diagram](docs/images/architecture.png)
+
 ```
 ┌─────────────────────────────────────────────────────────────┐
 │                  Quantum Operations Agent                    │
